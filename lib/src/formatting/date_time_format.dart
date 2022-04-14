@@ -15,6 +15,14 @@ class DateTimeFormat {
     return result;
   }
 
+  static DateTime? parse({
+    required String? dateTime,
+    required String format,
+    bool utc = true,
+  }) {
+    return dateTime == null ? null : DateFormat(format).parse(dateTime, utc);
+  }
+
   static DateTime parseMillis(
     int millis, {
     bool utc = true,
